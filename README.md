@@ -30,7 +30,9 @@ This project demonstrates the deployment of a centralized Security Information a
 * Connected to the Splunk Web UI via the host machine's browser to build the underlying architecture, setting up a listening port on `9997` to ingest incoming forwarder traffic.
 
 ![SSH Into Splunk Server](screenshots/ssh_into_splunk_server.png)
+
 ![Splunk Launch/Account Creation](screenshots/splunk_install_admin_account_setup.png)
+
 ![Splunk Enterprise Launch](screenshots/splunk_enterprise.png)
 
 ### Phase 3: Linux Endpoint Onboarding & Telemetry Validation
@@ -40,8 +42,11 @@ This project demonstrates the deployment of a centralized Security Information a
 * **Attack Simulation:** Executed brute force and credential spraying attacks against the Linux endpoint from the host CLI to generate high-fidelity authentication failure telemetry.
 
 ![Universal Forwarder Installation/Configuration](screenshots/installation_and_configuration_of_forwarder.png)
+
 ![Syslogs reports on Splunk](screenshots/splunk_logs.png)
+
 ![Spraying Attack Simulation](screenshots/spraying_attack.png)
+
 ![Brute Force Attack Simulation](screenshots/brute_force.png)
 
 ### Phase 4: Windows Endpoint Onboarding & Telemetry Validation
@@ -50,6 +55,7 @@ This project demonstrates the deployment of a centralized Security Information a
 * **Attack Simulation:** Leveraged the local Windows command-line environment to systematically script and simulate failed login thresholds, ensuring Windows Event ID `4625` (An account failed to log on) was explicitly tripped and recorded.
 
 ![Windows Universal Forwarder](screenshots/windows_forwarder.png)
+
 ![Windows Simulated Brute Force Attack](screenshots/bruteforce_windows.png)
 
 ### Phase 5: Detection Engineering & Alert Rules
