@@ -30,7 +30,7 @@ This project demonstrates the deployment of a centralized Security Information a
 * Connected to the Splunk Web UI via the host machine's browser to build the underlying architecture, setting up a listening port on `9997` to ingest incoming forwarder traffic.
 
 ![SSH Into Splunk Server](screenshots/ssh_into_splunk_server.png)
-![Splunk Launch/Account Creation](screenshots/splunk_install_admin_account_setup)
+![Splunk Launch/Account Creation](screenshots/splunk_install_admin_account_setup.png)
 ![Splunk Enterprise Launch](screenshots/splunk_enterprise.png)
 
 ### Phase 3: Linux Endpoint Onboarding & Telemetry Validation
