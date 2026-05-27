@@ -22,7 +22,7 @@ This project demonstrates the deployment of a centralized Security Information a
   * **Windows-Client:** Windows instance simulating a standard enterprise workstation.
 * Configured network security groups (NSGs) to allow internal communication across necessary telemetry ports (e.g., TCP `9997` for Splunk indexing) while restricting exposed public management ports.
 
-[Cloud Network/VM Configuration](screenshots/cloud_network_configuration.png)
+[Cloud Network/VM Configuration](/screenshots/cloud_network_configuration.png)
 
 ### Phase 2: SIEM Core Deployment & Configuration
 * Established an SSH session into the **Splunk-Server** to download, extract, and install the Splunk Enterprise binary.
