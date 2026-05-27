@@ -90,3 +90,6 @@ Monitors endpoint hygiene by tracking process creation events (e.g., Windows Eve
 * **Networking/Protocols:** VPC/VNet, SSH, RDP, TCP port `9997`, TCP port `8000`
 * **Security & Testing Tools:** Custom CLI scripts, Brute Force / Credential Spraying tools
 * **Languages:** Search Processing Language (SPL), Bash, PowerShell
+
+## 👥 Credits & Attributions
+* **Implementation & Analysis:** Independent lab execution, environment configuration, and documentation completed by [James Tibbs](https://github.com/jamestibbs12).
