@@ -22,10 +22,16 @@ This project demonstrates the deployment of a centralized Security Information a
   * **Windows-Client:** Windows instance simulating a standard enterprise workstation.
 * Configured network security groups (NSGs) to allow internal communication across necessary telemetry ports (e.g., TCP `9997` for Splunk indexing) while restricting exposed public management ports.
 
+[Cloud Network/VM Configuration](screenshots/cloud_network_configuration.png)
+
 ### Phase 2: SIEM Core Deployment & Configuration
 * Established an SSH session into the **Splunk-Server** to download, extract, and install the Splunk Enterprise binary.
 * Initialized the Splunk daemon, configured boot-start, and opened local firewall ports to allow web interface traffic.
 * Connected to the Splunk Web UI via the host machine's browser to build the underlying architecture, setting up a listening port on `9997` to ingest incoming forwarder traffic.
+
+[SSH Into Splunk Server](screenshots/ssh_into_splunk_server.png)
+[Splunk Launch/Account Creation](screenshots/splunk_install_admin_account_setup)
+[Splunk Enterprise Launch](screenshots/splunk_enterprise.png)
 
 ### Phase 3: Linux Endpoint Onboarding & Telemetry Validation
 * Accessed **Target-VM** via SSH to install the lightweight **Splunk Universal Forwarder**.
@@ -33,15 +39,24 @@ This project demonstrates the deployment of a centralized Security Information a
 * Mapped `inputs.conf` to track and ingest Linux system security logs (`/var/log/auth.log` or `/var/log/secure`).
 * **Attack Simulation:** Executed brute force and credential spraying attacks against the Linux endpoint from the host CLI to generate high-fidelity authentication failure telemetry.
 
+[Universal Forwarder Installation/Configuration](screenshots/installation_and_configuration_of_forwarder.png)
+[Syslogs reports on Splunk](screenshots/splunk_logs.png)
+[Spraying Attack Simulation](screenshots/spraying_attack.png)
+[Brute Force Attack Simulation](screenshots/brute_force.png)
+
 ### Phase 4: Windows Endpoint Onboarding & Telemetry Validation
 * Authenticated to **Windows-Client** via Remote Desktop Protocol (RDP).
 * Deployed the Windows variant of the Splunk Universal Forwarder, configuring it to capture the `Security`, `System`, and `Application` Windows Event Log channels.
 * **Attack Simulation:** Leveraged the local Windows command-line environment to systematically script and simulate failed login thresholds, ensuring Windows Event ID `4625` (An account failed to log on) was explicitly tripped and recorded.
 
+
+
 ### Phase 5: Detection Engineering & Alert Rules
 * Wrote targeted Search Processing Language (SPL) queries to filter and aggregate log data across both divergent operating systems.
 * Engineered an automated alerting rule evaluating telemetry in real-time. 
 * **Logic Threshold:** Trigger an operational alert if **5 or more failed login attempts** occur within a rolling 5-minute window for a specific user account or originating IP address.
+
+[Brute Force Alert](screenshots/bruteforce_attempt_alert.png)
 
 ---
 
@@ -57,6 +72,8 @@ Parses originating source IPs from failed authentication arrays and visualizes t
 
 ### 3. Top 10 Process Executions (Windows/Linux)
 Monitors endpoint hygiene by tracking process creation events (e.g., Windows Event ID `4688` / Linux audit logs) to detect potential post-exploitation tools, living-off-the-land techniques, or unauthorized binaries.
+
+[Splunk Customized Dashboard](screenshots/dashboard.png)
 
 ---
 
