@@ -3,23 +3,6 @@
 ## Project Overview
 This project demonstrates the deployment of a centralized Security Information and Event Management (SIEM) pipeline using **Splunk Enterprise**. The objective was to architect a cloud-based lab environment, securely onboard logs from both Windows and Linux endpoints, simulate malicious credential attacks, and build operational security telemetry via custom alert logic and real-time visualization dashboards.
 
-[ Host Machine CLI / RDP ] (Attack Simulation & Mgmt)
-                          
-
-┌─────────────────────── Cloud Virtual Network ───────────────────────┐
-│                                                                     │
-│   ┌─────────────────┐       ┌─────────────────┐      ┌───────────┐  │
-│   │    Target-VM    │       │  Windows-Client │      │  Splunk-  │  │
-│   │   (Linux CLI)   │       │   (Windows)     │      │  Server   │  │
-│   │                 │       │                 │      │           │  │
-│   │  ┌───────────┐  │       │  ┌───────────┐  │      │ ┌───────┐ │  │
-│   │  │ Universal │  │       │  │ Universal │  │      │ │Splunk │ │  │
-│   │  │ Forwarder │  │       │  │ Forwarder │  │      │ │Core   │ │  │
-│   └──└───┬───────┘──┘       └──└───┬───────┘──┘      └─└▲──────┘─┘  │
-│          │                         │                    │           │
-│          └─────────────────────────┴────────────────────┘           │
-│                       Syslog & WinEventLog (Port 9997)              │
-└─────────────────────────────────────────────────────────────────────┘
 
 ## Technical Capabilities Demonstrated
 * **Architecture & Networking:** Cloud VPC configuration, firewall rule definitions, private IP routing, and secure remote management (SSH/RDP).
